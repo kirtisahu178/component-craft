@@ -1,3 +1,49 @@
 import { Routes } from '@angular/router';
+import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
+import { ButtonComponent } from './components/button/button.component';
+import { CardComponent } from './components/card/card.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { DatepickerComponent } from './components/datepicker/datepicker.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
+import { FormFieldComponent } from './components/form-field/form-field.component';
+import { GridListComponent } from './components/grid-list/grid-list.component';
+import { IconComponent } from './components/icon/icon.component';
+import { ListComponent } from './components/list/list.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { StepperComponent } from './components/stepper/stepper.component';
+import { TableComponent } from './components/table/table.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { UsefulLinksComponent } from './components/useful-links/useful-links.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    { path: 'useful-links', component: UsefulLinksComponent },
+    { path: 'autocomplete', component: AutocompleteComponent },
+    { path: 'bottomsheet', component: BottomSheetComponent },
+    { path: 'button', component: ButtonComponent },
+    { path: 'card', component: CardComponent },
+    { path: 'checkbox', component: CheckboxComponent },
+    { path: 'datepicker', component: DatepickerComponent },
+    { path: 'dialog', component: DialogComponent },
+    { path: 'expansion-panel', component: ExpansionPanelComponent },
+    { path: 'form-field', component: FormFieldComponent },
+    { path: 'grid-list', component: GridListComponent },
+    { path: 'icon', component: IconComponent },
+    { path: 'list', component: ListComponent },
+    { path: 'menu', component: MenuComponent },
+    { path: 'progress-bar', component: ProgressBarComponent },
+    { path: 'progress-spinner', component: ProgressSpinnerComponent },
+    { path: 'sidenav', component: SidenavComponent },
+    { path: 'snackbar', component: SnackbarComponent },
+    { path: 'stepper', component: StepperComponent },
+    { path: 'table', component: TableComponent },
+    { path: 'tabs', component: TabsComponent },
+    { path: 'toolbar', component: ToolbarComponent },
+    // { path: '', redirectTo: '/useful-links', pathMatch: 'full' },
+];

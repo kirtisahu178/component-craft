@@ -1,0 +1,117 @@
+<app-sticky-card title="Form-field works!"></app-sticky-card>
+
+<mat-card class="card-container">
+
+  <div class="div-container">
+    <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+      <mat-tab label="Design" >
+
+        <h4>Form Fields</h4>
+
+        <div>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Full Name</mat-label>
+            <input matInput name="input">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>DOB</mat-label>
+            <input matInput [matDatepicker]="firstDatePicker" placeholder="MM/DD/YYYY">
+            <mat-datepicker-toggle matIconSuffix [for]="firstDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #firstDatePicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Higher Education</mat-label>
+            <mat-select name="select">
+              <mat-option value="phd">PhD</mat-option>
+              <mat-option value="msc">Master of Science</mat-option>
+              <mat-option value="bsc">Bachelor of Science</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>About Yourself</mat-label>
+            <textarea matInput name="textarea" rows="5"></textarea>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <label>Gender</label>
+          <section name="radio">
+            <mat-radio-group>
+              <mat-radio-button value="F">Female</mat-radio-button>
+              &nbsp;&nbsp;
+              <mat-radio-button value="M">Male</mat-radio-button>
+            </mat-radio-group>
+          </section>
+        </div> 
+
+        <div>
+          <label>Hobbies</label>
+          <section name="checkbox">
+            <mat-checkbox>Yog Practice</mat-checkbox>
+            <mat-checkbox>Book Reading</mat-checkbox>
+            <mat-checkbox>Sports</mat-checkbox>
+            <mat-checkbox>Dancing</mat-checkbox>
+            <mat-checkbox>Singing</mat-checkbox>
+            <mat-checkbox>Drawing</mat-checkbox>
+          </section>
+        </div>
+
+      </mat-tab>
+
+      <mat-tab label="Code">
+        <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
+                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+
+  <div class="div-container">
+    <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+      <mat-tab label="Design" >
+
+        <h4>Form Fields</h4>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput name="input">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>DOB</mat-label>
+            <input matInput [matDatepicker]="secondDatePicker" placeholder="MM/DD/YYYY">
+            <mat-datepicker-toggle matIconSuffix [for]="secondDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #secondDatePicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>About Yourself</mat-label>
+            <textarea matInput name="textarea" rows="5"></textarea>
+          </mat-form-field>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Code">
+        <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
+                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</mat-card>
+
+
+

@@ -1,0 +1,82 @@
+<app-sticky-card title="Autocomplete works!"></app-sticky-card>
+
+<mat-card class="card-container">
+
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <p>Simple autocomplete</p>
+                <form class="example-form">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
+                        <mat-label>Number</mat-label>
+                        <input type="text" placeholder="--Select an option--" aria-label="Number" matInput [formControl]="numberFormControl"
+                            [matAutocomplete]="autoNumber">
+                        <mat-autocomplete #autoNumber="matAutocomplete">
+                            @for (option of numberFilteredOptions | async; track option) {
+                            <mat-option [value]="option">{{option}}</mat-option>
+                            }
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
+                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <p>Highlight the first autocomplete option</p>
+                <form class="example-form">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
+                        <mat-label>Gender</mat-label>
+                        <input type="text" placeholder="--Select an option--" aria-label="Gender" matInput [formControl]="genderFormControl"
+                            [matAutocomplete]="autoGender">
+                        <mat-autocomplete autoActiveFirstOption #autoGender="matAutocomplete">
+                            @for (option of genderFilteredOptions | async; track option) {
+                            <mat-option [value]="option">{{option}}</mat-option>
+                            }
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy2"
+                [CSSCodeToCopy]="CSSCodeToCopy2" [TsCodeToCopy]="TsCodeToCopy2"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <p>Option groups autocomplete</p>
+                <form [formGroup]="stateForm" class="example-form">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
+                        <mat-label>States Group</mat-label>
+                        <input type="text" matInput placeholder="--Select an option--" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+                        <mat-autocomplete #autoGroup="matAutocomplete">
+                            @for (group of stateGroupOptions | async; track group) {
+                            <mat-optgroup [label]="group.letter">
+                                @for (name of group.names; track name) {
+                                <mat-option [value]="name">{{name}}</mat-option>
+                                }
+                            </mat-optgroup>
+                            }
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy3"
+                [CSSCodeToCopy]="CSSCodeToCopy3" [TsCodeToCopy]="TsCodeToCopy3"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</mat-card>

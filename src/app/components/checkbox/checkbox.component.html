@@ -1,0 +1,18 @@
+<app-sticky-card title="Checkbox works!"></app-sticky-card>
+
+<mat-card class="card-container">
+
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
+                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+</mat-card>

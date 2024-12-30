@@ -1,1 +1,185 @@
-/* You can add global styles to this file, and also import other style files */
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($component-craft-theme);
+
+
+@use '@angular/material' as mat;
+@include mat.core();
+
+@mixin light-toolbar-styles($theme) {
+  --mat-toolbar-container-background-color: #{mat.get-theme-color($theme, primary, 90)};
+  --mat-toolbar-container-text-color: #{mat.get-theme-color($theme, primary, 40)};
+  --mdc-icon-button-icon-color: #{mat.get-theme-color($theme, primary, 40)};
+  --mat-card-subtitle-text-color: #{mat.get-theme-color($theme, primary, 40)};
+}
+
+@mixin dark-toolbar-styles($theme) {
+  --mat-toolbar-container-background-color: #{mat.get-theme-color($theme, primary, 30)};
+  --mat-toolbar-container-text-color: #{mat.get-theme-color($theme, primary, 90)};
+  --mdc-icon-button-icon-color: #{mat.get-theme-color($theme, primary, 90)};
+  --mat-card-subtitle-text-color: #{mat.get-theme-color($theme, primary, 80)};
+}
+
+@mixin form-field-styles($text-color) {
+  mat-label {
+    font-size: 18px;
+    font-weight: 500;
+    color: $text-color;
+    line-height: 1.5;
+  }
+
+  .custom-outline {
+    --mdc-outlined-text-field-outline-color: #{$text-color};
+    --mdc-outlined-text-field-outline-width: 2px;
+  }
+
+  mat-form-field.custom-field-height {
+    --mat-form-field-container-height: 45px;
+    --mat-form-field-container-vertical-padding: 10px;
+    --mdc-outlined-text-field-focus-outline-color: #{$text-color};
+  }
+}
+
+@mixin button-focus-styles($bg-color, $text-color) {
+  .menu-button:focus {
+    background-color: $bg-color;
+    color: $text-color;
+    transition: all ease .5s;
+  }
+}
+
+@mixin gradient-text-styles($start-color, $end-color) {
+  .gradient-text {
+    background: linear-gradient(to right, $start-color, $end-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+  }
+}
+
+// Theme 1: Rose Pink Theme
+$rose-pink-theme: mat.define-theme((color: (theme-type: light, primary: mat.$rose-palette, tertiary: mat.$red-palette)));
+
+// Theme 2: Azure Blue Theme
+$azure-blue-theme: mat.define-theme((color: (theme-type: light, primary: mat.$azure-palette, tertiary: mat.$blue-palette)));
+
+// Theme 3: Yellow Olive Theme
+$yellow-olive-theme: mat.define-theme((color: (theme-type: light, primary: mat.$yellow-palette, tertiary: mat.$yellow-palette)));
+
+// Theme 4: Orange Peach Theme
+$orange-peach-theme: mat.define-theme((color: (theme-type: light, primary: mat.$orange-palette, tertiary: mat.$orange-palette)));
+
+// Theme 5: Magenta Violet Theme (Dark)
+$magenta-violet-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$magenta-palette, tertiary: mat.$violet-palette)));
+
+// Theme 6: Brown Peach Theme (Dark)
+$brown-peach-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$orange-palette, tertiary: mat.$cyan-palette)));
+
+// Theme 7: Forest Green Theme (Dark)
+$forest-green-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$green-palette, tertiary: mat.$green-palette)));
+
+// Theme 8: Cyan Aqua Theme (Dark)
+$cyan-aqua-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$cyan-palette, tertiary: mat.$cyan-palette)));
+
+
+:root {
+  .rose-pink-theme {
+    @include mat.all-component-themes($rose-pink-theme);
+    @include light-toolbar-styles($rose-pink-theme);
+    @include button-focus-styles(#ffd9e1, #ba005c);
+    @include gradient-text-styles(#ee4b9c, #ba005c);
+    @include form-field-styles(#ba005c);
+  }
+
+  .azure-blue-theme {
+    @include mat.all-component-themes($azure-blue-theme);
+    @include light-toolbar-styles($azure-blue-theme);
+    @include button-focus-styles(#d7e3ff, #005cbb);
+    @include gradient-text-styles(#005cbb, #00006e);
+    @include form-field-styles(#005cbb);
+  }
+
+  .yellow-olive-theme {
+    @include mat.all-component-themes($yellow-olive-theme);
+    @include light-toolbar-styles($yellow-olive-theme);
+    @include button-focus-styles(#eaea00, #626200);
+    @include gradient-text-styles(#abab03, #4d4d03);
+    @include form-field-styles(#626200);
+  }
+
+  .orange-peach-theme {
+    @include mat.all-component-themes($orange-peach-theme);
+    @include light-toolbar-styles($orange-peach-theme);
+    @include button-focus-styles(#ffb787, #964900);
+    @include gradient-text-styles(#f68b45, #964900);
+    @include form-field-styles(#964900);
+  }
+
+  .magenta-violet-theme {
+    @include mat.all-component-themes($magenta-violet-theme);
+    @include dark-toolbar-styles($magenta-violet-theme);
+    @include button-focus-styles(#392836, #ffd7f5);
+    @include gradient-text-styles(#f154f1, #810081);
+    @include form-field-styles(#ffabf3);
+  }
+
+  .brown-peach-theme {
+    @include mat.all-component-themes($brown-peach-theme);
+    @include dark-toolbar-styles($brown-peach-theme);
+    @include button-focus-styles(#5c3310, #ffb787);
+    @include gradient-text-styles(#ea7e3b, #723600);
+    @include form-field-styles(#ffb787);
+  }
+
+  .forest-green-theme {
+    @include mat.all-component-themes($forest-green-theme);
+    @include dark-toolbar-styles($forest-green-theme);
+    @include button-focus-styles(#254e25, #02e600);
+    @include gradient-text-styles(#02e600, #047902);
+    @include form-field-styles(#02e600);
+  }
+
+  .cyan-aqua-theme {
+    @include mat.all-component-themes($cyan-aqua-theme);
+    @include dark-toolbar-styles($cyan-aqua-theme);
+    @include button-focus-styles(#0e3232, #00dddd);
+    @include gradient-text-styles(#05dede, #018787);
+    @include form-field-styles(#00dddd);
+  }
+}
+
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.3);
+}

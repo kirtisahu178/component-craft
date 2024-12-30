@@ -1,0 +1,107 @@
+<app-sticky-card title="Button works!"></app-sticky-card>
+
+<mat-card class="card-container">
+  <div class="div-container">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Design">
+
+        <div class="button-design">
+          <button mat-button matTooltip="Basic button">Basic</button>&nbsp;
+          <button mat-raised-button matTooltip="Raised button">Raised</button>&nbsp;
+          <button mat-stroked-button matTooltip="Stroked button">Stroked</button>&nbsp;
+          <button mat-flat-button matTooltip="Flat button">Flat</button>&nbsp;
+          <button mat-button disabled matTooltip="Basic disabled button">Disabled</button>
+        </div>
+        <div class="button-design">
+          <button mat-icon-button matTooltip="Icon button">
+            <mat-icon>home</mat-icon>
+          </button>&nbsp;
+          <button mat-fab matTooltip="FAB button">
+            <mat-icon>delete</mat-icon>
+          </button>&nbsp;
+          <button mat-mini-fab matTooltip="Mini FAB button">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div class="button-design">
+          <button mat-fab extended matTooltip="Extended fab button">
+            <mat-icon>favorite</mat-icon>
+            Basic
+          </button>&nbsp;
+          <button mat-fab extended disabled matTooltip="Extended fab button">
+            <mat-icon>favorite</mat-icon>
+            Disabled
+          </button>&nbsp;
+          <a mat-fab extended routerLink="." matTooltip="Extended fab button">
+            <mat-icon>favorite</mat-icon>
+            Link
+          </a>
+        </div>
+
+      </mat-tab>
+
+      <mat-tab label="Code">
+        <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
+                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <!-- <div class="div-container">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Design">
+        <div class="button-design">
+          <button class="button-86" role="button">Button 1</button> <br><br><br>
+          <button class="button-60" role="button">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="text">Button 60</span>
+          </button>
+        </div>
+        
+      </mat-tab>
+
+      <mat-tab label="Code">
+        <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start">
+          <mat-tab label="HTML">
+            <div class="tab-content-wrapper">
+              <h3>
+                <pre><code class="gradient-text">{{ HtmlCodeToCopy }}</code></pre>
+              </h3>
+              <button mat-button color="primary" (click)="copyCode('html')" class="copy-button">
+                {{ isCopied ? 'Copied!' : 'Copy Code' }}
+              </button>
+            </div>
+          </mat-tab>
+
+          <mat-tab label="TS">
+            <div class="tab-content-wrapper">
+              <h3>
+                <pre><code class="gradient-text">{{ TsCodeToCopy }}</code></pre>
+              </h3>
+              <button mat-button color="primary" (click)="copyCode('ts')" class="copy-button">
+                {{ isCopied ? 'Copied!' : 'Copy Code' }}
+              </button>
+            </div>
+          </mat-tab>
+
+          <mat-tab label="CSS">
+            <div class="tab-content-wrapper">
+              <h3>
+                <pre><code class="gradient-text">{{ CSSCodeToCopy }}</code></pre>
+              </h3>
+              <button mat-button color="primary" (click)="copyCode('css')" class="copy-button">
+                {{ isCopied ? 'Copied!' : 'Copy Code' }}
+              </button>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-tab>
+    </mat-tab-group>
+  </div> -->
+
+</mat-card>
+
+<!-- HTML !-->
