@@ -4,8 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Author
 
-### Kirti Sahu
-<br>
+#### Kirti Sahu
 Full Stack Developer
 
 ## Licence
