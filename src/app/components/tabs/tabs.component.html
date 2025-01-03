@@ -1,18 +1,266 @@
 <app-sticky-card title="Tabs works!"></app-sticky-card>
 
 <mat-card class="card-container">
-
+    <p class="tab-label">Basic Tabs</p>
     <div class="div-container">
         <mat-tab-group animationDuration="0ms" class="mat-tab-section">
             <mat-tab label="Design">
-                
+                <mat-tab-group>
+                    <mat-tab label="Commitment Issues">
+                        <p>"I commit, but I don’t push my feelings."</p>
+                    </mat-tab>
+                    <mat-tab label="Code Confessions">
+                        <p>"Sometimes, I write comments just to feel productive."</p>
+                    </mat-tab>
+                    <mat-tab label="Deployment Drama">
+                        <p>"It worked on localhost, I swear!"</p>
+                    </mat-tab>
+                </mat-tab-group>
             </mat-tab>
 
             <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
-                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1" [CSSCodeToCopy]="CSSCodeToCopy1"
+                    [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
             </mat-tab>
         </mat-tab-group>
     </div>
-    
+
+    <p class="tab-label">Basic tabs with icons and custom label</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <mat-tab-group>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">home</mat-icon>
+                            Home Sweet Home
+                        </ng-template>
+                        <p>"Where all the bugs come to rest... for now."</p>
+                    </mat-tab>
+
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">shopping_cart_checkout</mat-icon>
+                            Checkout (It's Free, Right?)
+                        </ng-template>
+                        <p>"Adding to cart... but you still need to refactor your code!"</p>
+                    </mat-tab>
+
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">settings</mat-icon>
+                            Settings... Or Are They?
+                        </ng-template>
+                        <p>"Tweaking settings until it works... but don’t touch anything else!"</p>
+                    </mat-tab>
+                </mat-tab-group>
+
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy2" [CSSCodeToCopy]="CSSCodeToCopy2"
+                    [TsCodeToCopy]="TsCodeToCopy2"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Tab group with aligned labels</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+                    <mat-tab label="Hello World!">
+                        <p>"First tab, and it compiled without errors!"</p>
+                    </mat-tab>
+                    <mat-tab label="Align Left">
+                        <p>The only thing more difficult than centering divs: explaining why.</p>
+                    </mat-tab>
+                    <mat-tab label="Bug Life">
+                        <p>"Not a bug, it’s an undocumented feature."</p>
+                    </mat-tab>
+                </mat-tab-group>
+
+                <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+                    <mat-tab label="Dark Mode">
+                        <p>Because real developers work in the dark. 🌑</p>
+                    </mat-tab>
+                    <mat-tab label="Light Mode">
+                        <p>Blinding users since 1999. 💡</p>
+                    </mat-tab>
+                    <mat-tab label="High Contrast">
+                        <p>For when your eyesight matches your debugging skills. 👓</p>
+                    </mat-tab>
+                </mat-tab-group>
+
+                <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="end">
+                    <mat-tab label="CSS Wizardry">
+                        <p>Where the magic happens… and breaks. 🪄</p>
+                    </mat-tab>
+                    <mat-tab label="JavaScript Shenanigans">
+                        <p>“It worked yesterday” — a JS developer’s mantra. 🤯</p>
+                    </mat-tab>
+                    <mat-tab label="404 Creativity">
+                        <p>When design meets *file not found*. 💻</p>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy3" [CSSCodeToCopy]="CSSCodeToCopy3"
+                    [TsCodeToCopy]="TsCodeToCopy3"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Tab group animations</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <p>No animation</p>
+                <mat-tab-group animationDuration="0ms">
+                    <mat-tab label="Instant Debugging">
+                        <p>"When your bug fix is faster than your coffee brewing."</p>
+                    </mat-tab>
+                    <mat-tab label="Immediate Results">
+                        <p>"Just like refreshing your browser... with no delay!"</p>
+                    </mat-tab>
+                    <mat-tab label="Speed of Light">
+                        <p>"Not a single frame lost, this tab loads like lightning!"</p>
+                    </mat-tab>
+                </mat-tab-group>
+
+                <p>Very slow animation</p>
+                <mat-tab-group animationDuration="2000ms">
+                    <mat-tab label="Waiting for API Response">
+                        <p>"It feels like watching paint dry... but it's an API call."</p>
+                    </mat-tab>
+                    <mat-tab label="Load More">
+                        <p>"Give it a minute, it’s slowly loading like your weekend plans."</p>
+                    </mat-tab>
+                    <mat-tab label="Waiting for Deployment">
+                        <p>"Deploying code: It's like waiting for a spaceship to launch."</p>
+                    </mat-tab>
+                </mat-tab-group>
+
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy4" [CSSCodeToCopy]="CSSCodeToCopy4"
+                    [TsCodeToCopy]="TsCodeToCopy4"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Tab group with headers below the content</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <mat-tab-group headerPosition="below">
+                    <mat-tab label="Pixel Perfect">
+                        <p>"That feeling when your design is perfectly aligned, except for the one pixel."</p>
+                    </mat-tab>
+                    <mat-tab label="Responsive Nightmare">
+                        <p>"The joy of designing for mobile... and then discovering the hamburger menu didn't work."</p>
+                    </mat-tab>
+                    <mat-tab label="Dark Mode">
+                        <p>"Because light mode was never an option in the dev world."</p>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy5" [CSSCodeToCopy]="CSSCodeToCopy5"
+                    [TsCodeToCopy]="TsCodeToCopy5"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Tab group with ink bar fit to content</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <mat-tab-group fitInkBarToContent>
+                    <mat-tab label="First">
+                        <p>"The first tab is like the first cup of coffee – essential!"</p>
+                    </mat-tab>
+                    <mat-tab label="Second">
+                        <p>"Just like your second try at a bug fix – it *should* work."</p>
+                    </mat-tab>
+                    <mat-tab label="Third">
+                        <p>"The third tab is for the ones who think they know it all."</p>
+                    </mat-tab>
+                    <mat-tab label="Fourth" disabled>
+                        <p>"This tab is under construction... much like your weekend plans."</p>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy6" [CSSCodeToCopy]="CSSCodeToCopy6"
+                    [TsCodeToCopy]="TsCodeToCopy6"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Tab group that keeps its content inside the DOM when it's off-screen.</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <p>Start the video in the first tab and navigate to the second one to see how it keeps playing.</p>
+                <mat-tab-group preserveContent>
+                    <mat-tab label="First">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/B-lipaiZII8"
+                            style="border: 0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </mat-tab>
+                    <mat-tab label="Second">
+                        <p>"Just like your bug report, the video keeps playing... forever."</p>
+                        <p>Note how the video from the previous tab is still playing.</p>
+                    </mat-tab>
+                </mat-tab-group>
+
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy7" [CSSCodeToCopy]="CSSCodeToCopy7"
+                    [TsCodeToCopy]="TsCodeToCopy7"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Tab group with paginated tabs</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <mat-tab-group>
+                    @for (tab of lotsOfTabs; track tab) {
+                    <mat-tab [label]="tab">
+                        <p>"The tab that nobody asked for, but it's here anyway."</p>
+                    </mat-tab>
+                    }
+                </mat-tab-group>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy8" [CSSCodeToCopy]="CSSCodeToCopy8"
+                    [TsCodeToCopy]="TsCodeToCopy8"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <!-- <p class="tab-label"></p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1" [CSSCodeToCopy]="CSSCodeToCopy1"
+                    [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div> -->
+
 </mat-card>

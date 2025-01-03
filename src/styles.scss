@@ -46,6 +46,9 @@
     color: $text-color;
     transition: all ease .5s;
   }
+  .tab-label {
+    color: $text-color;
+  }
 }
 
 @mixin gradient-text-styles($start-color, $end-color) {
@@ -56,6 +59,7 @@
     background-clip: text;
     font-weight: bold;
   }
+  
 }
 
 // Theme 1: Rose Pink Theme
