@@ -5,7 +5,6 @@
   border-radius: 0 0 10px 10px;
 }
 
-
 .div-container{
   border: 2px solid #dedddd;
   border-radius: 10px;
@@ -14,6 +13,10 @@
 
 .mat-tab-section{
   padding: 10px;
+}
+
+.design-tab{
+  margin-top: 10px;
 }
 
 .tab-content-wrapper {
@@ -29,6 +32,51 @@
   border-radius: 10px;
 }
 
-.example-spacer {
+.spacer {
   flex: 1 1 auto;
 }
+
+.custom-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.multiline-toolbar {
+  flex-direction: column;
+}
+
+.mat-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.social-media-links {
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+}
+
+.website-name {
+  font-size: 1.5rem;
+}
+
+.profile-picture {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.menu-links button {
+  margin-right: 16px;
+}
+
+

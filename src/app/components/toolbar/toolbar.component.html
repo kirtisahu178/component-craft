@@ -2,30 +2,355 @@
 
 <mat-card class="card-container">
 
-    <div class="div-container">
-        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
-            <mat-tab label="Design">
-                <p>Basic Toolbar</p>
-                <mat-toolbar>
-                    <button mat-icon-button>
-                      <mat-icon matTooltip="A little door to endless possibilities!">menu</mat-icon>
-                    </button>
-                    <span>My App</span>
-                    <span class="example-spacer"></span>
-                    <button mat-icon-button>
-                      <mat-icon matTooltip="If you love yourself, the universe reflects that love back to you. ">favorite</mat-icon>
-                    </button>
-                    <button mat-icon-button>
-                      <mat-icon matTooltip="Share your knowledge with others">share</mat-icon>
-                    </button>
-                  </mat-toolbar>
-            </mat-tab>
+  <p class="tab-label">Basic Toolbar</p>
+  <div class="div-container">
+    <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+      <mat-tab label="Design">
+        <div class="design-tab">
+          <mat-toolbar>
+            <button mat-icon-button>
+              <mat-icon matTooltip="A little door to endless possibilities!">menu</mat-icon>
+            </button>
+            <span>ComCraft</span>
+            <span class="spacer"></span>
+            <button mat-icon-button>
+              <mat-icon matTooltip="Commit your heart... and your code!">favorite</mat-icon>
+            </button>
+            <button mat-icon-button>
+              <mat-icon matTooltip="Sharing is caring (except passwords!)">share</mat-icon>
+            </button>
+          </mat-toolbar>
+        </div>
+      </mat-tab>
 
-            <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
-                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
-            </mat-tab>
-        </mat-tab-group>
-    </div>
-    
+      <mat-tab label="Code">
+        <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1" [CSSCodeToCopy]="CSSCodeToCopy1"
+          [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <p class="tab-label">Responsive Toolbar</p>
+  <div class="div-container">
+    <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+      <mat-tab label="Design">
+        <div class="design-tab">
+          <mat-toolbar class="custom-toolbar">
+            <button mat-icon-button [mat-menu-trigger-for]="menu" *ngIf="isSmallScreen">
+              <mat-icon matTooltip="Navigate like a pro, break things like a dev!">menu</mat-icon>
+            </button>
+
+            <mat-menu x-position="after" #menu="matMenu">
+              <button mat-button>Home</button>
+              <button mat-menu-item>About</button>
+              <button mat-menu-item>Services</button>
+              <button mat-menu-item>Portfolio</button>
+              <button mat-menu-item>Contact</button>
+            </mat-menu>
+
+            <span>ComCraft</span>
+
+            <span class="spacer"></span>
+
+            <div class="menu" *ngIf="isSmallScreen === false">
+              <button mat-button>Home</button>
+              <button mat-button>About</button>
+              <button mat-button>Services</button>
+              <button mat-button>Portfolio</button>
+              <button mat-button>Contact</button>
+            </div>
+
+            <span class="spacer"></span>
+
+            <button mat-icon-button>
+              <mat-icon matTooltip="Searching for answers, finding Stack Overflow!">search</mat-icon>
+            </button>
+          </mat-toolbar>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Code">
+        <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy2" [CSSCodeToCopy]="CSSCodeToCopy2"
+          [TsCodeToCopy]="TsCodeToCopy2"></app-code-tab-design>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <p class="tab-label">Responsive toolbar with sigin and create account button</p>
+  <div class="div-container">
+    <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+      <mat-tab label="Design">
+        <div class="design-tab">
+          <mat-toolbar class="responsive-toolbar">
+            <button mat-icon-button [mat-menu-trigger-for]="secondmenu" *ngIf="isSmallScreen">
+              <mat-icon matTooltip="A little door to endless possibilities!">menu</mat-icon>
+            </button>
+
+            <mat-menu x-position="after" #secondmenu="matMenu">
+              <h2>ComCraft</h2>
+              <button mat-button>Home</button>
+              <button mat-menu-item>About</button>
+              <button mat-menu-item>Services</button>
+              <button mat-menu-item>Portfolio</button>
+              <button mat-menu-item>Contact</button>
+            </mat-menu>
+            <div>
+              <span *ngIf="isSmallScreen === false">ComCraft</span>
+            </div>
+
+            <span class="spacer"></span>
+
+            <div class="menu" *ngIf="isSmallScreen === false">
+              <button mat-button>Home</button>
+              <button mat-button>About</button>
+              <button mat-button>Services</button>
+              <button mat-button>Portfolio</button>
+              <button mat-button>Contact</button>
+            </div>
+
+            <span class="spacer"></span>
+
+            <div class="auth-buttons">
+              <button mat-stroked-button>Sign In</button>
+              <button mat-flat-button color="accent">Create Account</button>
+            </div>
+          </mat-toolbar>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Code">
+        <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy3" [CSSCodeToCopy]="CSSCodeToCopy3"
+          [TsCodeToCopy]="TsCodeToCopy3"></app-code-tab-design>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <p class="tab-label">Responsive toolbar with nested menu</p>
+  <div class="div-container">
+    <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+      <mat-tab label="Design">
+        <div class="design-tab">
+          <mat-toolbar class="custom-toolbar">
+            <button mat-icon-button [mat-menu-trigger-for]="mainMenu" *ngIf="isSmallScreen">
+              <mat-icon matTooltip="Navigate like a pro, break things like a dev!">menu</mat-icon>
+            </button>
+
+            <mat-menu x-position="after" #mainMenu="matMenu">
+              <button mat-button>Home</button>
+              <button mat-menu-item>About</button>
+              <button mat-menu-item>Services</button>
+
+              <!-- Nested Menu -->
+              <button mat-menu-item [mat-menu-trigger-for]="portfolioMenu">
+                Portfolio
+                <mat-icon matSuffix class="dropdown-icon">keyboard_arrow_down</mat-icon>
+              </button>
+              <mat-menu #portfolioMenu="matMenu">
+                <button mat-menu-item [mat-menu-trigger-for]="frontendMenu">
+                  Frontend Development
+                </button>
+                <mat-menu #frontendMenu="matMenu">
+                  <button mat-menu-item>Angular</button>
+                  <button mat-menu-item>Angular Material</button>
+                  <button mat-menu-item>HTML/CSS</button>
+                  <button mat-menu-item>Reusable Components</button>
+                  <!-- Nested for Reusable Components -->
+                  <button mat-menu-item [mat-menu-trigger-for]="componentsMenu">
+                    Reusable Components
+                  </button>
+                  <mat-menu #componentsMenu="matMenu">
+                    <button mat-menu-item>Component Design</button>
+                    <button mat-menu-item>Modularization</button>
+                    <button mat-menu-item>Scalability</button>
+                  </mat-menu>
+                </mat-menu>
+
+                <!-- Backend Development -->
+                <button mat-menu-item [mat-menu-trigger-for]="backendMenu">
+                  Backend Development
+                </button>
+                <mat-menu #backendMenu="matMenu">
+                  <button mat-menu-item>Node.js</button>
+                  <button mat-menu-item>Express.js</button>
+                  <button mat-menu-item>RESTful APIs</button>
+                  <!-- Nested for RESTful APIs -->
+                  <button mat-menu-item [mat-menu-trigger-for]="restApiMenu">
+                    RESTful APIs
+                  </button>
+                  <mat-menu #restApiMenu="matMenu">
+                    <button mat-menu-item>GET, POST, PUT, DELETE</button>
+                    <button mat-menu-item>API Security</button>
+                    <button mat-menu-item>JWT</button>
+                  </mat-menu>
+                </mat-menu>
+
+                <!-- Database Management -->
+                <button mat-menu-item [mat-menu-trigger-for]="databaseMenu">
+                  Database Management
+                </button>
+                <mat-menu #databaseMenu="matMenu">
+                  <button mat-menu-item>MariaDB</button>
+                  <button mat-menu-item>MSSQL</button>
+                  <button mat-menu-item>MySQL</button>
+                </mat-menu>
+
+              </mat-menu>
+
+              <button mat-menu-item>Contact</button>
+            </mat-menu>
+
+            <span>ComCraft</span>
+
+            <span class="spacer"></span>
+
+            <div class="menu" *ngIf="!isSmallScreen">
+              <button mat-button>Home</button>
+              <button mat-button>About</button>
+              <button mat-button>Services</button>
+
+              <!-- Nested Menu for larger screens -->
+              <button mat-button [mat-menu-trigger-for]="portfolioMenu">
+                Portfolio
+                <mat-icon matSuffix class="dropdown-icon">keyboard_arrow_down</mat-icon>
+              </button>
+              <mat-menu #portfolioMenu="matMenu">
+                <button mat-menu-item [mat-menu-trigger-for]="frontendMenu">
+                  Frontend Development
+                </button>
+                <mat-menu #frontendMenu="matMenu">
+                  <button mat-menu-item>Angular</button>
+                  <button mat-menu-item>Angular Material</button>
+                  <button mat-menu-item>HTML/CSS</button>
+                  <button mat-menu-item>Reusable Components</button>
+                  <!-- Nested for Reusable Components -->
+                  <button mat-menu-item [mat-menu-trigger-for]="componentsMenu">
+                    Reusable Components
+                  </button>
+                  <mat-menu #componentsMenu="matMenu">
+                    <button mat-menu-item>Component Design</button>
+                    <button mat-menu-item>Modularization</button>
+                    <button mat-menu-item>Scalability</button>
+                  </mat-menu>
+                </mat-menu>
+
+                <!-- Backend Development -->
+                <button mat-menu-item [mat-menu-trigger-for]="backendMenu">
+                  Backend Development
+                </button>
+                <mat-menu #backendMenu="matMenu">
+                  <button mat-menu-item>Node.js</button>
+                  <button mat-menu-item>Express.js</button>
+                  <button mat-menu-item>RESTful APIs</button>
+                  <!-- Nested for RESTful APIs -->
+                  <button mat-menu-item [mat-menu-trigger-for]="restApiMenu">
+                    RESTful APIs
+                  </button>
+                  <mat-menu #restApiMenu="matMenu">
+                    <button mat-menu-item>GET, POST, PUT, DELETE</button>
+                    <button mat-menu-item>API Security</button>
+                    <button mat-menu-item>JWT</button>
+                  </mat-menu>
+                </mat-menu>
+
+                <!-- Database Management -->
+                <button mat-menu-item [mat-menu-trigger-for]="databaseMenu">
+                  Database Management
+                </button>
+                <mat-menu #databaseMenu="matMenu">
+                  <button mat-menu-item>MariaDB</button>
+                  <button mat-menu-item>MSSQL</button>
+                  <button mat-menu-item>MySQL</button>
+                </mat-menu>
+
+              </mat-menu>
+
+              <button mat-button>Contact</button>
+            </div>
+          </mat-toolbar>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Code">
+        <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy4" [CSSCodeToCopy]="CSSCodeToCopy4"
+          [TsCodeToCopy]="TsCodeToCopy4"></app-code-tab-design>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <p class="tab-label">Multi line toolbar</p>
+  <div class="div-container">
+    <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+      <mat-tab label="Design">
+        <div class="design-tab">
+          <mat-toolbar class="multiline-toolbar">
+            <mat-toolbar-row>
+              <div class="social-media-links">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0A66C2" width="20px" height="20px">
+                  <path
+                    d="M22.23 0H1.77C.79 0 0 .8 0 1.78v20.44C0 23.2.79 24 1.77 24h20.46c.98 0 1.77-.8 1.77-1.78V1.78C24 .8 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.58c-1.14 0-2.06-.93-2.06-2.07s.92-2.07 2.06-2.07 2.07.93 2.07 2.07-.93 2.07-2.07 2.07zm15.1 12.87h-3.56V14.5c0-1.42-.03-3.26-1.99-3.26-2 0-2.31 1.56-2.31 3.16v6.05H9.02V9h3.42v1.56h.05c.47-.9 1.6-1.84 3.3-1.84 3.53 0 4.18 2.32 4.18 5.34v6.39z" />
+                </svg>&nbsp;
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="24px" height="24px">
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.419-1.304.762-1.604-2.665-.305-5.466-1.334-5.466-5.933 0-1.31.467-2.381 1.235-3.222-.123-.304-.536-1.526.117-3.176 0 0 1.007-.322 3.3 1.23a11.513 11.513 0 013.003-.403c1.018.004 2.042.138 3.003.403 2.292-1.552 3.297-1.23 3.297-1.23.655 1.65.242 2.872.12 3.176.77.841 1.234 1.912 1.234 3.222 0 4.61-2.805 5.624-5.475 5.92.43.37.814 1.103.814 2.222 0 1.605-.014 2.898-.014 3.293 0 .319.19.694.8.576C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>&nbsp;
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FF0000" width="24px" height="24px">
+                  <path
+                    d="M19.615 3.184C21.057 3.576 22 4.807 22 6.5v11c0 1.693-.943 2.924-2.385 3.316-2.095.552-10.505.552-12.6 0C2.943 20.424 2 19.193 2 17.5v-11c0-1.693.943-2.924 2.385-3.316 2.095-.552 10.505-.552 12.6 0zM10 15.5l5.5-3.5L10 8.5v7z" />
+                </svg>&nbsp;
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1877F2" width="24px" height="24px">
+                  <path
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89H7.898v-2.89h2.54V9.912c0-2.508 1.493-3.89 3.777-3.89 1.096 0 2.238.195 2.238.195v2.462h-1.26c-1.243 0-1.63.772-1.63 1.562v1.87h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                </svg>&nbsp;
+
+              </div>
+
+              <span class="spacer"></span>
+
+              <span class="website-name">ComponentCraft</span>
+
+              <span class="spacer"></span>
+              <mat-icon class="profile-picture">person</mat-icon>
+            </mat-toolbar-row>
+
+            <mat-toolbar-row>
+              <div class="menu-links">
+                <button mat-button [mat-menu-trigger-for]="menu1">Menu 1</button>
+                <mat-menu #menu1="matMenu">
+                  <button mat-menu-item>Option 1</button>
+                  <button mat-menu-item>Option 2</button>
+                </mat-menu>
+
+                <button mat-button [mat-menu-trigger-for]="menu2">Menu 2</button>
+                <mat-menu #menu2="matMenu">
+                  <button mat-menu-item>Option A</button>
+                  <button mat-menu-item>Option B</button>
+                </mat-menu>
+
+                <button mat-button>Menu 3</button>
+              </div>
+
+              <span class="spacer"></span>
+
+              <mat-form-field appearance="outline" class="example-full-width custom-outline custom-field-height">
+                <mat-label>Search</mat-label>
+                <input matInput type="text" placeholder="Search...">
+                <button mat-icon-button matSuffix>
+                  <mat-icon>search</mat-icon>
+                </button>
+              </mat-form-field>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Code">
+        <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy5" [CSSCodeToCopy]="CSSCodeToCopy5"
+          [TsCodeToCopy]="TsCodeToCopy5"></app-code-tab-design>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
 </mat-card>
