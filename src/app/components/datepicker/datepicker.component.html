@@ -2,303 +2,335 @@
 
 <mat-card class="card-container">
 
+    <p class="tab-label">Basic datepicker</p>
     <div class="div-container">
         <mat-tab-group animationDuration="0ms" class="mat-tab-section">
             <mat-tab label="Design">
-                <p>Basic datepicker</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput [matDatepicker]="basicDatePicker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="basicDatePicker"></mat-datepicker-toggle>
-                    <mat-datepicker #basicDatePicker></mat-datepicker>
-                </mat-form-field>
-            </mat-tab>
-
-            <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
-                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
-            </mat-tab>
-        </mat-tab-group>
-    </div>
-
-
-    <div class="div-container">
-        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
-            <mat-tab label="Design">
-                <p>Datepicker touch UI</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput [matDatepicker]="touchUiDatePicker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="touchUiDatePicker"></mat-datepicker-toggle>
-                    <mat-datepicker touchUi #touchUiDatePicker></mat-datepicker>
-                </mat-form-field>
-
-            </mat-tab>
-
-            <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy2"
-                [CSSCodeToCopy]="CSSCodeToCopy2" [TsCodeToCopy]="TsCodeToCopy2"></app-code-tab-design>
-            </mat-tab>
-        </mat-tab-group>
-    </div>
-
-    <div class="div-container">
-        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
-            <mat-tab label="Design">
-                <p>Datepicker value binding</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Angular forms</mat-label>
-                    <input matInput [matDatepicker]="picker1" [formControl]="date">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
-                    <mat-datepicker #picker1></mat-datepicker>
-                </mat-form-field> &nbsp;
-
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Value binding</mat-label>
-                    <input matInput [matDatepicker]="picker3" [value]="date.value">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
-                    <mat-datepicker #picker3></mat-datepicker>
-                </mat-form-field>
-
-            </mat-tab>
-
-            <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy3"
-                [CSSCodeToCopy]="CSSCodeToCopy3" [TsCodeToCopy]="TsCodeToCopy3"></app-code-tab-design>
-            </mat-tab>
-        </mat-tab-group>
-    </div>
-
-    <div class="div-container">
-        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
-            <mat-tab label="Design">
-                <p>Datepicker with min & max validation</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="minMaxValidationPicker" />
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="minMaxValidationPicker"></mat-datepicker-toggle>
-                    <mat-datepicker #minMaxValidationPicker></mat-datepicker>
-                </mat-form-field>
-            </mat-tab>
-
-            <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy4"
-                [CSSCodeToCopy]="CSSCodeToCopy4" [TsCodeToCopy]="TsCodeToCopy4"></app-code-tab-design>
-            </mat-tab>
-        </mat-tab-group>
-    </div>
-
-    <div class="div-container">
-        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
-            <mat-tab label="Design">
-                <p>Datepicker with filter validation</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="filterDatePicker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="filterDatePicker"></mat-datepicker-toggle>
-                    <mat-datepicker #filterDatePicker></mat-datepicker>
-                </mat-form-field>
-            </mat-tab>
-
-            <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy5"
-                [CSSCodeToCopy]="CSSCodeToCopy5" [TsCodeToCopy]="TsCodeToCopy5"></app-code-tab-design>
-            </mat-tab>
-        </mat-tab-group>
-    </div>
-
-    <div class="div-container">
-        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
-            <mat-tab label="Design">
-                <p>Disabled datepicker</p>
-                <p>
-                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                        <mat-label>Completely disabled</mat-label>
-                        <input matInput [matDatepicker]="dp1" disabled>
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="basicDatePicker">
                         <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matIconSuffix [for]="dp1"></mat-datepicker-toggle>
-                        <mat-datepicker #dp1></mat-datepicker>
+                        <mat-datepicker-toggle matIconSuffix [for]="basicDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #basicDatePicker></mat-datepicker>
                     </mat-form-field>
-                </p>
+                </div>
+            </mat-tab>
 
-                <p>
-                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                        <mat-label>Popup disabled</mat-label>
-                        <input matInput [matDatepicker]="dp2">
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1" [CSSCodeToCopy]="CSSCodeToCopy1"
+                    [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Datepicker touch UI</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="touchUiDatePicker">
                         <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matIconSuffix [for]="dp2" disabled></mat-datepicker-toggle>
-                        <mat-datepicker #dp2></mat-datepicker>
+                        <mat-datepicker-toggle matIconSuffix [for]="touchUiDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker touchUi #touchUiDatePicker></mat-datepicker>
                     </mat-form-field>
-                </p>
+                </div>
+            </mat-tab>
 
-                <p>
-                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                        <mat-label>Input disabled</mat-label>
-                        <input matInput [matDatepicker]="dp3" disabled>
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy2" [CSSCodeToCopy]="CSSCodeToCopy2"
+                    [TsCodeToCopy]="TsCodeToCopy2"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Datepicker value binding</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Angular forms</mat-label>
+                        <input matInput [matDatepicker]="picker1" [formControl]="date">
                         <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
-                        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field> &nbsp;
+
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Value binding</mat-label>
+                        <input matInput [matDatepicker]="picker3" [value]="date.value">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+                        <mat-datepicker #picker3></mat-datepicker>
                     </mat-form-field>
-                </p>
-
+                </div>
             </mat-tab>
 
             <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy6"
-                [CSSCodeToCopy]="CSSCodeToCopy6" [TsCodeToCopy]="TsCodeToCopy6"></app-code-tab-design>
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy3" [CSSCodeToCopy]="CSSCodeToCopy3"
+                    [TsCodeToCopy]="TsCodeToCopy3"></app-code-tab-design>
             </mat-tab>
         </mat-tab-group>
     </div>
 
+    <p class="tab-label">Datepicker with min & max validation</p>
     <div class="div-container">
         <mat-tab-group animationDuration="0ms" class="mat-tab-section">
             <mat-tab label="Design">
-                <p>Datepicker with custom icon</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput [matDatepicker]="customIconDatepicker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="customIconDatepicker">
-                        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                    </mat-datepicker-toggle>
-                    <mat-datepicker #customIconDatepicker></mat-datepicker>
-                </mat-form-field>
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="minMaxValidationPicker" />
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="minMaxValidationPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #minMaxValidationPicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
             </mat-tab>
 
             <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy7"
-                [CSSCodeToCopy]="CSSCodeToCopy7" [TsCodeToCopy]="TsCodeToCopy7"></app-code-tab-design>
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy4" [CSSCodeToCopy]="CSSCodeToCopy4"
+                    [TsCodeToCopy]="TsCodeToCopy4"></app-code-tab-design>
             </mat-tab>
         </mat-tab-group>
     </div>
 
+    <p class="tab-label">Datepicker with filter validation</p>
     <div class="div-container">
         <mat-tab-group animationDuration="0ms" class="mat-tab-section">
             <mat-tab label="Design">
-                <p>Basic date range picker</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Enter a date range</mat-label>
-                    <mat-date-range-input [rangePicker]="dateRangePicker">
-                        <input matStartDate placeholder="Start date">
-                        <input matEndDate placeholder="End date">
-                    </mat-date-range-input>
-                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="dateRangePicker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #dateRangePicker></mat-date-range-picker>
-                </mat-form-field>
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="filterDatePicker">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="filterDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #filterDatePicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
             </mat-tab>
 
             <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy8"
-                [CSSCodeToCopy]="CSSCodeToCopy8" [TsCodeToCopy]="TsCodeToCopy8"></app-code-tab-design>
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy5" [CSSCodeToCopy]="CSSCodeToCopy5"
+                    [TsCodeToCopy]="TsCodeToCopy5"></app-code-tab-design>
             </mat-tab>
         </mat-tab-group>
     </div>
 
+    <p class="tab-label">Disabled datepicker</p>
     <div class="div-container">
         <mat-tab-group animationDuration="0ms" class="mat-tab-section">
             <mat-tab label="Design">
-                <p>Date range picker with a custom selection strategy</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Enter a date range</mat-label>
-                    <mat-date-range-input [rangePicker]="customSelectionDatePicker">
-                        <input matStartDate placeholder="Start date">
-                        <input matEndDate placeholder="End date">
-                    </mat-date-range-input>
-                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="customSelectionDatePicker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #customSelectionDatePicker></mat-date-range-picker>
-                </mat-form-field>
+                <div class="design-tab">
+                    <p>
+                        <mat-form-field class="example-full-width custom-outline custom-field-height"
+                            appearance="outline" floatLabel="always">
+                            <mat-label>Completely disabled</mat-label>
+                            <input matInput [matDatepicker]="dp1" disabled>
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="dp1"></mat-datepicker-toggle>
+                            <mat-datepicker #dp1></mat-datepicker>
+                        </mat-form-field>
+                    </p>
 
+                    <p>
+                        <mat-form-field class="example-full-width custom-outline custom-field-height"
+                            appearance="outline" floatLabel="always">
+                            <mat-label>Popup disabled</mat-label>
+                            <input matInput [matDatepicker]="dp2">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="dp2" disabled></mat-datepicker-toggle>
+                            <mat-datepicker #dp2></mat-datepicker>
+                        </mat-form-field>
+                    </p>
+
+                    <p>
+                        <mat-form-field class="example-full-width custom-outline custom-field-height"
+                            appearance="outline" floatLabel="always">
+                            <mat-label>Input disabled</mat-label>
+                            <input matInput [matDatepicker]="dp3" disabled>
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
+                            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                        </mat-form-field>
+                    </p>
+                </div>
             </mat-tab>
 
             <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy9"
-                [CSSCodeToCopy]="CSSCodeToCopy9" [TsCodeToCopy]="TsCodeToCopy9"></app-code-tab-design>
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy6" [CSSCodeToCopy]="CSSCodeToCopy6"
+                    [TsCodeToCopy]="TsCodeToCopy6"></app-code-tab-design>
             </mat-tab>
         </mat-tab-group>
     </div>
 
+    <p class="tab-label">Datepicker with custom icon</p>
     <div class="div-container">
         <mat-tab-group animationDuration="0ms" class="mat-tab-section">
             <mat-tab label="Design">
-                <p>Datepicker with action buttons</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput [matDatepicker]="actionBtnDatePicker" />
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="actionBtnDatePicker"></mat-datepicker-toggle>
-                    <mat-datepicker #actionBtnDatePicker>
-                        <mat-datepicker-actions>
-                            <button mat-button matDatepickerCancel>Cancel</button>
-                            <button mat-raised-button matDatepickerApply>Apply</button>
-                        </mat-datepicker-actions>
-                    </mat-datepicker>
-                </mat-form-field>&nbsp;
-
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Enter a date range</mat-label>
-                    <mat-date-range-input [rangePicker]="actionBtnRangePicker">
-                        <input matStartDate placeholder="Start date" />
-                        <input matEndDate placeholder="End date" />
-                    </mat-date-range-input>
-                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="actionBtnRangePicker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #actionBtnRangePicker>
-                        <mat-date-range-picker-actions>
-                            <button mat-button matDateRangePickerCancel>Cancel</button>
-                            <button mat-raised-button matDateRangePickerApply>Apply</button>
-                        </mat-date-range-picker-actions>
-                    </mat-date-range-picker>
-                </mat-form-field>
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="customIconDatepicker">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="customIconDatepicker">
+                            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #customIconDatepicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
             </mat-tab>
 
             <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy10"
-                [CSSCodeToCopy]="CSSCodeToCopy10" [TsCodeToCopy]="TsCodeToCopy10"></app-code-tab-design>
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy7" [CSSCodeToCopy]="CSSCodeToCopy7"
+                    [TsCodeToCopy]="TsCodeToCopy7"></app-code-tab-design>
             </mat-tab>
         </mat-tab-group>
     </div>
 
+    <p class="tab-label">Basic date range picker</p>
     <div class="div-container">
         <mat-tab-group animationDuration="0ms" class="mat-tab-section">
             <mat-tab label="Design">
-                <p>Date range picker comparison ranges</p>
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>First campaign</mat-label>
-                    <mat-date-range-input [formGroup]="campaignOne" [rangePicker]="campaignOnePicker"
-                        [comparisonStart]="campaignTwo.value.start" [comparisonEnd]="campaignTwo.value.end">
-                        <input matStartDate placeholder="Start date" formControlName="start">
-                        <input matEndDate placeholder="End date" formControlName="end">
-                    </mat-date-range-input>
-                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
-                </mat-form-field> &nbsp;
-
-                <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline" floatLabel="always">
-                    <mat-label>Second campaign</mat-label>
-                    <mat-date-range-input [formGroup]="campaignTwo" [rangePicker]="campaignTwoPicker"
-                        [comparisonStart]="campaignOne.value.start" [comparisonEnd]="campaignOne.value.end">
-                        <input matStartDate placeholder="Start date" formControlName="start">
-                        <input matEndDate placeholder="End date" formControlName="end">
-                    </mat-date-range-input>
-                    <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
-                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                    <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
-                </mat-form-field>
-
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Enter a date range</mat-label>
+                        <mat-date-range-input [rangePicker]="dateRangePicker">
+                            <input matStartDate placeholder="Start date">
+                            <input matEndDate placeholder="End date">
+                        </mat-date-range-input>
+                        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="dateRangePicker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #dateRangePicker></mat-date-range-picker>
+                    </mat-form-field>
+                </div>
             </mat-tab>
 
             <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy11"
-                [CSSCodeToCopy]="CSSCodeToCopy11" [TsCodeToCopy]="TsCodeToCopy11"></app-code-tab-design>
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy8" [CSSCodeToCopy]="CSSCodeToCopy8"
+                    [TsCodeToCopy]="TsCodeToCopy8"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Date range picker with a custom selection strategy</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Enter a date range</mat-label>
+                        <mat-date-range-input [rangePicker]="customSelectionDatePicker">
+                            <input matStartDate placeholder="Start date">
+                            <input matEndDate placeholder="End date">
+                        </mat-date-range-input>
+                        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="customSelectionDatePicker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #customSelectionDatePicker></mat-date-range-picker>
+                    </mat-form-field>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy9" [CSSCodeToCopy]="CSSCodeToCopy9"
+                    [TsCodeToCopy]="TsCodeToCopy9"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Datepicker with action buttons</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="actionBtnDatePicker" />
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="actionBtnDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #actionBtnDatePicker>
+                            <mat-datepicker-actions>
+                                <button mat-button matDatepickerCancel>Cancel</button>
+                                <button mat-raised-button matDatepickerApply>Apply</button>
+                            </mat-datepicker-actions>
+                        </mat-datepicker>
+                    </mat-form-field>&nbsp;
+
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Enter a date range</mat-label>
+                        <mat-date-range-input [rangePicker]="actionBtnRangePicker">
+                            <input matStartDate placeholder="Start date" />
+                            <input matEndDate placeholder="End date" />
+                        </mat-date-range-input>
+                        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="actionBtnRangePicker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #actionBtnRangePicker>
+                            <mat-date-range-picker-actions>
+                                <button mat-button matDateRangePickerCancel>Cancel</button>
+                                <button mat-raised-button matDateRangePickerApply>Apply</button>
+                            </mat-date-range-picker-actions>
+                        </mat-date-range-picker>
+                    </mat-form-field>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy10" [CSSCodeToCopy]="CSSCodeToCopy10"
+                    [TsCodeToCopy]="TsCodeToCopy10"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Date range picker comparison ranges</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>First campaign</mat-label>
+                        <mat-date-range-input [formGroup]="campaignOne" [rangePicker]="campaignOnePicker"
+                            [comparisonStart]="campaignTwo.value.start" [comparisonEnd]="campaignTwo.value.end">
+                            <input matStartDate placeholder="Start date" formControlName="start">
+                            <input matEndDate placeholder="End date" formControlName="end">
+                        </mat-date-range-input>
+                        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+                    </mat-form-field> &nbsp;
+
+                    <mat-form-field class="example-full-width custom-outline custom-field-height" appearance="outline"
+                        floatLabel="always">
+                        <mat-label>Second campaign</mat-label>
+                        <mat-date-range-input [formGroup]="campaignTwo" [rangePicker]="campaignTwoPicker"
+                            [comparisonStart]="campaignOne.value.start" [comparisonEnd]="campaignOne.value.end">
+                            <input matStartDate placeholder="Start date" formControlName="start">
+                            <input matEndDate placeholder="End date" formControlName="end">
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
+                        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                        <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+                    </mat-form-field>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy11" [CSSCodeToCopy]="CSSCodeToCopy11"
+                    [TsCodeToCopy]="TsCodeToCopy11"></app-code-tab-design>
             </mat-tab>
         </mat-tab-group>
     </div>
