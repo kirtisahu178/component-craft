@@ -59,6 +59,30 @@
     background-clip: text;
     font-weight: bold;
   }
+}
+
+@mixin drawer-styles($text-color, $bg-color, $bg2-color) {
+  .example-left-drawer,
+  .example-right-drawer {
+    border: 1px solid $bg2-color;
+    background: linear-gradient(to bottom right, $bg2-color, $bg2-color);
+  }
+  
+  .example-left-drawer button {
+    background-color: $bg-color;
+    color: $text-color;
+  }
+  
+  .example-left-drawer mat-expansion-panel {
+    background-color: $bg-color;
+    color: $text-color;
+  }
+  
+  .example-left-drawer button:hover,
+  .example-left-drawer mat-expansion-panel:hover {
+    background-color: $text-color;
+    color: $bg-color;
+  }
   
 }
 
@@ -94,6 +118,7 @@ $cyan-aqua-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$cyan
     @include button-focus-styles(#ffd9e1, #ba005c);
     @include gradient-text-styles(#ee4b9c, #ba005c);
     @include form-field-styles(#ba005c);
+    @include drawer-styles(#ba005c, #fff8f8, #ffd9e1);
   }
 
   .azure-blue-theme {
@@ -102,6 +127,7 @@ $cyan-aqua-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$cyan
     @include button-focus-styles(#d7e3ff, #005cbb);
     @include gradient-text-styles(#005cbb, #00006e);
     @include form-field-styles(#005cbb);
+    @include drawer-styles(#005cbb, #fff8f8, #d7e3ff);
   }
 
   .yellow-olive-theme {
@@ -110,6 +136,7 @@ $cyan-aqua-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$cyan
     @include button-focus-styles(#eaea00, #626200);
     @include gradient-text-styles(#abab03, #4d4d03);
     @include form-field-styles(#626200);
+    @include drawer-styles(#626200, #fff8f8, #eaea00);
   }
 
   .orange-peach-theme {
@@ -118,6 +145,7 @@ $cyan-aqua-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$cyan
     @include button-focus-styles(#ffb787, #964900);
     @include gradient-text-styles(#f68b45, #964900);
     @include form-field-styles(#964900);
+    @include drawer-styles(#964900, #fff8f8, #ffdcc7);
   }
 
   .magenta-violet-theme {
@@ -126,6 +154,7 @@ $cyan-aqua-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$cyan
     @include button-focus-styles(#392836, #ffd7f5);
     @include gradient-text-styles(#f154f1, #810081);
     @include form-field-styles(#ffabf3);
+    @include drawer-styles(#ffd7f5, #161215, #300d30);
   }
 
   .brown-peach-theme {
@@ -134,6 +163,7 @@ $cyan-aqua-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$cyan
     @include button-focus-styles(#5c3310, #ffb787);
     @include gradient-text-styles(#ea7e3b, #723600);
     @include form-field-styles(#ffb787);
+    @include drawer-styles(#ffb787, #161215, #562902);
   }
 
   .forest-green-theme {
@@ -142,6 +172,7 @@ $cyan-aqua-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$cyan
     @include button-focus-styles(#254e25, #02e600);
     @include gradient-text-styles(#02e600, #047902);
     @include form-field-styles(#02e600);
+    @include drawer-styles(#02e600, #161215, #254e25);
   }
 
   .cyan-aqua-theme {
@@ -150,6 +181,7 @@ $cyan-aqua-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$cyan
     @include button-focus-styles(#0e3232, #00dddd);
     @include gradient-text-styles(#05dede, #018787);
     @include form-field-styles(#00dddd);
+    @include drawer-styles(#00dddd, #161215, #0e3232);
   }
 }
 

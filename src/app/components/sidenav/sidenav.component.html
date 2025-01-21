@@ -2,17 +2,296 @@
 
 <mat-card class="card-container">
 
+    <p class="tab-label">Basic drawer with modes</p>
     <div class="div-container">
         <mat-tab-group animationDuration="0ms" class="mat-tab-section">
             <mat-tab label="Design">
-                
+                <div class="design-tab">
+                    <p>Pick your favorite mode</p>
+                    <mat-radio-group (change)="onModeChange($event)">
+                        <mat-radio-button value="over">Over</mat-radio-button>
+                        <mat-radio-button value="side" checked>Side</mat-radio-button>
+                        <mat-radio-button value="push">Push</mat-radio-button>
+                    </mat-radio-group>
+
+                    <mat-drawer-container class="drawer-container-1">
+                        <mat-drawer [mode]="pickedMode" #drawer opened class="example-left-drawer">
+                            <p>Drawer</p>
+                        </mat-drawer>
+                        <mat-drawer-content class="main-content">
+                            <button mat-icon-button (click)="drawer.toggle()">
+                                <mat-icon>{{ drawer.opened ? 'close' : 'menu' }}</mat-icon>
+                            </button>
+                            <p>Main Content</p>
+                            <p>Why do programmers prefer dark mode? Because the light attracts bugs!</p>
+                        </mat-drawer-content>
+                    </mat-drawer-container>
+                </div>
             </mat-tab>
 
             <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
-                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1" [CSSCodeToCopy]="CSSCodeToCopy1"
+                    [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
             </mat-tab>
         </mat-tab-group>
     </div>
-    
+
+    <p class="tab-label">Responsive drawer</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-toolbar>
+                        <button mat-icon-button (click)="menuDrawer.toggle()">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <span>ComponentCraft</span>
+                    </mat-toolbar>
+
+                    <mat-drawer-container class="drawer-container-2">
+                        <mat-drawer #menuDrawer opened class="example-left-drawer">
+                            <ng-container *ngFor="let route of menuItems">
+                                <button mat-button (click)="selectMenu(route.menuName)" class="menu-button">
+                                    {{ route.menuName }}
+                                </button>
+                            </ng-container>
+                        </mat-drawer>
+
+                        <div class="main-content">
+                            <ng-container [ngSwitch]="selectedMenu">
+                                <div *ngSwitchCase="'Home'">
+                                    <h4>Welcome to Home!</h4>
+                                    <p>This is the home page content.</p>
+                                </div>
+                                <div *ngSwitchCase="'About'">
+                                    <h4>About Us</h4>
+                                    <p>This is the about page content.</p>
+                                </div>
+                                <div *ngSwitchCase="'Contact'">
+                                    <h4>Contact Us</h4>
+                                    <p>This is the contact page content.</p>
+                                </div>
+                                <div *ngSwitchDefault>
+                                    <h4>Select a menu item</h4>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </mat-drawer-container>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy2" [CSSCodeToCopy]="CSSCodeToCopy2"
+                    [TsCodeToCopy]="TsCodeToCopy2"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+
+    <p class="tab-label">Responsive Dual-Sided Drawer Layout</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-toolbar>
+                        <button mat-icon-button (click)="leftDrawer.toggle()">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <span>ComponentCraft</span>
+                    </mat-toolbar>
+
+                    <mat-drawer-container class="drawer-container-3" autosize>
+
+                        <!-- Left Drawer (Funny Menu) -->
+                        <mat-drawer #leftDrawer opened class="example-left-drawer">
+                            <ng-container *ngFor="let route of menuItems">
+                                <button mat-button (click)="selectMenu(route.menuName)" class="menu-button">
+                                    {{ route.menuName }}
+                                </button>
+                            </ng-container>
+                        </mat-drawer>
+
+                        <!-- Right Drawer (Funny Content) -->
+                        <mat-drawer #rightDrawer position="end" class="example-right-drawer">
+                            <ng-container [ngSwitch]="selectedMenu">
+                                <div *ngSwitchCase="'Home'">
+                                    <h3>Welcome, Couch Potato!</h3>
+                                    <p>Relax and make yourself at home. But don’t forget to do the dishes!</p>
+                                </div>
+                                <div *ngSwitchCase="'About'">
+                                    <h3>About Us: The Mystery</h3>
+                                    <p>
+                                        We're a bunch of caffeine-fueled individuals trying to make sense of
+                                        life... and code.
+                                    </p>
+                                </div>
+                                <div *ngSwitchCase="'Contact'">
+                                    <h3>Contact Us, Maybe?</h3>
+                                    <p>
+                                        Got a question? Send us an email and wait 3-5 business years for a
+                                        reply!
+                                    </p>
+                                </div>
+                                <div *ngSwitchDefault>
+                                    <h3>Right Drawer</h3>
+                                    <p>Pick something from the left drawer first, lazy genius!</p>
+                                </div>
+                            </ng-container>
+                        </mat-drawer>
+
+                        <!-- Main Content -->
+                        <div class="main-content">
+                            <h1>{{ selectedMenu || 'Hello, World!' }}</h1>
+                            <p>
+                                Feeling adventurous? Click the buttons on the left. For more surprises,
+                                toggle the right drawer below!
+                            </p>
+                            <button mat-raised-button (click)="toggleRightDrawer(rightDrawer)">
+                                Open the Treasure Chest
+                            </button>
+                        </div>
+
+                    </mat-drawer-container>
+
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy3" [CSSCodeToCopy]="CSSCodeToCopy3"
+                    [TsCodeToCopy]="TsCodeToCopy3"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Responsive Multi-Level Navigation Drawer with Expandable Submenus</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-toolbar>
+                        <button mat-icon-button (click)="expandableDrawer.toggle()">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <span>ComponentCraft</span>
+                    </mat-toolbar>
+
+                    <mat-drawer-container class="drawer-container-4" autosize>
+
+                        <!-- Main Drawer -->
+                        <mat-drawer #expandableDrawer opened class="example-left-drawer">
+                            <div *ngFor="let menuItem of multipleMenuItems">
+                                <button mat-button (click)="toggleSubMenu(menuItem)" class="menu-button">
+                                    {{ menuItem.menuName }}
+                                    <span *ngIf="menuItem.subMenu" class="arrow">
+                                        {{ menuItem.expanded ? '▲' : '▼' }}
+                                    </span>
+                                </button>
+
+                                <!-- Submenu -->
+                                <div *ngIf="menuItem.expanded && menuItem.subMenu" class="submenu-container">
+                                    <button mat-button *ngFor="let subItem of menuItem.subMenu"
+                                        (click)="selectMenu(subItem.menuName)" class="submenu-button">
+                                        {{ subItem.menuName }}
+                                    </button>
+                                </div>
+                            </div>
+                        </mat-drawer>
+
+                        <!-- Main Content -->
+                        <div class="main-content">
+                            <h1>{{ selectedMenu || 'Welcome!' }}</h1>
+                            <p>
+                                This is the main content area. Use the drawer on the left to navigate
+                                through the menu options.
+                            </p>
+                        </div>
+
+                    </mat-drawer-container>
+
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy4" [CSSCodeToCopy]="CSSCodeToCopy4"
+                    [TsCodeToCopy]="TsCodeToCopy4"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Responsive Multi-Level Navigation Drawer with Expandable Submenus using mat-accordion</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-toolbar>
+                        <button mat-icon-button (click)="panelDrawer.toggle()">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <span>ComponentCraft</span>
+                    </mat-toolbar>
+
+                    <mat-drawer-container class="drawer-container-with-panel">
+                        <!-- Side Navigation Drawer -->
+                        <mat-drawer #panelDrawer opened class="example-left-drawer">
+                          <div>
+                            <mat-accordion>
+                              <ng-container *ngFor="let menuItem of multipleMenuItems2">
+                                <!-- Main Menu Item -->
+                                <mat-expansion-panel *ngIf="menuItem.subMenu; else standaloneMenu" class="mat-elevation-z0">
+                                  <mat-expansion-panel-header>
+                                    {{ menuItem.menuName }}
+                                  </mat-expansion-panel-header>
+                      
+                                  <!-- Submenu -->
+                                  <ng-container *ngFor="let subItem of menuItem.subMenu">
+                                    <mat-expansion-panel *ngIf="subItem.subMenu; else submenuItem" class="mat-elevation-z0">
+                                      <mat-expansion-panel-header>
+                                        {{ subItem.menuName }}
+                                      </mat-expansion-panel-header>
+                      
+                                      <!-- Sub-submenu -->
+                                      <ng-container *ngFor="let subSubItem of subItem.subMenu">
+                                        <button mat-button class="sub-submenu-button">
+                                          {{ subSubItem.menuName }}
+                                        </button>
+                                      </ng-container>
+                                    </mat-expansion-panel>
+                      
+                                    <!-- Submenu without further nesting -->
+                                    <ng-template #submenuItem>
+                                      <button mat-button class="submenu-button">
+                                        {{ subItem.menuName }}
+                                      </button>
+                                    </ng-template>
+                                  </ng-container>
+                                </mat-expansion-panel>
+                      
+                                <!-- Standalone Menu -->
+                                <ng-template #standaloneMenu>
+                                  <button mat-button class="menu-button">
+                                    {{ menuItem.menuName }}
+                                  </button>
+                                </ng-template>
+                              </ng-container>
+                            </mat-accordion>
+                          </div>
+                        </mat-drawer>
+                      
+                        <!-- Main Content -->
+                        <div class="main-content">
+                          <h1>Welcome!</h1>
+                          <p>Select a menu item to navigate.</p>
+                        </div>
+                      </mat-drawer-container>                      
+
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy5" [CSSCodeToCopy]="CSSCodeToCopy5"
+                    [TsCodeToCopy]="TsCodeToCopy5"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
 </mat-card>

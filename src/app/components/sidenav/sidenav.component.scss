@@ -6,25 +6,88 @@
 }
 
 
-.div-container{
+.div-container {
   border: 2px solid #dedddd;
   border-radius: 10px;
   margin: 5px 0 5px 0;
 }
 
-.mat-tab-section{
+.mat-tab-section {
   padding: 10px;
 }
 
-.tab-content-wrapper {
-  position: relative;
-  padding-top: 40px;
+.design-tab {
+  margin-top: 10px;
 }
 
-.copy-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-  border-radius: 10px;
+.example-spacer {
+  flex: 1 1 auto;
 }
+
+.drawer-container-1,
+.drawer-container-2,
+.drawer-container-3,
+.drawer-container-4 {
+  width: auto;
+  height: 210px;
+}
+
+.drawer-container-with-panel {
+  height: 450px;
+  display: flex;
+}
+
+.main-content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.menu-button,
+.submenu-button,
+.sub-submenu-button {
+  text-align: left;
+  padding: 10px;
+}
+
+
+.mat-elevation-z0 {
+  box-shadow: none !important;
+}
+
+.example-left-drawer {
+  width: 250px;
+  border-radius: 16px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.example-right-drawer {
+  width: 250px;
+  border-radius: 16px;
+  margin: 10px 0 10px 10px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.example-left-drawer button {
+  width: 100%;
+  text-align: left;
+  justify-content: left;
+  margin-bottom: 5px;
+  padding: 25px 22px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.example-left-drawer mat-expansion-panel {
+  border-radius: 10px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  overflow: hidden;
+}
+
