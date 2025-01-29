@@ -2,17 +2,271 @@
 
 <mat-card class="card-container">
 
+    <p class="tab-label">Basic card</p>
     <div class="div-container">
         <mat-tab-group animationDuration="0ms" class="mat-tab-section">
             <mat-tab label="Design">
-                
+                <div class="design-tab">
+                    <mat-card appearance="outlined">
+                        <mat-card-content>Simple card</mat-card-content>
+                    </mat-card>
+                </div>
             </mat-tab>
 
             <mat-tab label="Code">
-                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1"
-                [CSSCodeToCopy]="CSSCodeToCopy1" [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy1" [CSSCodeToCopy]="CSSCodeToCopy1"
+                    [TsCodeToCopy]="TsCodeToCopy1"></app-code-tab-design>
             </mat-tab>
         </mat-tab-group>
     </div>
-    
+
+
+    <p class="tab-label">Card with multiple sections</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-card class="example-card" appearance="outlined">
+                        <!-- Instagram-style Header -->
+                        <mat-card-header>
+                            <img mat-card-avatar src="user.png" alt="Dev Avatar">
+                            <mat-card-title>semicolon_slayer 👨‍💻🚀</mat-card-title>
+                            <mat-card-subtitle>🔥 Deployed 5 mins ago</mat-card-subtitle>
+                        </mat-card-header>
+
+                        <!-- Instagram-style Image/GIF -->
+                        <img mat-card-image src="image1.jpg" alt="Deploy Gone Wrong">
+
+                        <!-- Caption -->
+                        <mat-card-content>
+                            <p>
+                                "Works on my machine" 🤡 but crashes in production 🚨.
+                                The logs? Empty. The client? Angry. The fix? Restart the server and pray.
+                                #DevLife #DeployNightmares #ItWorkedYesterday
+                            </p>
+                        </mat-card-content>
+
+                        <!-- Instagram-style Actions -->
+                        <mat-card-actions>
+                            <button mat-button><mat-icon>favorite_border</mat-icon> Like</button>
+                            <button mat-button><mat-icon>comment</mat-icon> Comment</button>
+                            <button mat-button><mat-icon>save_alt</mat-icon> Save</button>
+                        </mat-card-actions>
+
+                        <!-- Comments Section -->
+                        <mat-card-content>
+                            <div class="comment-feed">
+                                <p><strong>code_guru </strong> "Bro, just clear the cache. Trust me. 😆"</p>
+                                <p><strong>frontend_fury </strong> "Deploy on Friday, they said... it'll be fun, they
+                                    said... 😂"</p>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy4" [CSSCodeToCopy]="CSSCodeToCopy4"
+                    [TsCodeToCopy]="TsCodeToCopy4"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+
+    <p class="tab-label">Card with actions alignment option</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-card appearance="outlined">
+                        <mat-card-header>
+                            <mat-card-title>Sloth Developer</mat-card-title>
+                            <mat-card-subtitle>Procrastination group</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Writes one line of code... then takes a nap. 🦥💤</p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button>Deploy... Later</button>
+                        </mat-card-actions>
+                    </mat-card>
+                    <br>
+                    <mat-card appearance="outlined">
+                        <mat-card-header>
+                            <mat-card-title>Cat Engineer</mat-card-title>
+                            <mat-card-subtitle>Chaos Management group</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Accidentally deletes production files but walks away like nothing happened. 😼💻</p>
+                        </mat-card-content>
+                        <mat-card-actions align="end">
+                            <button mat-button>Undo (If You Can)</button>
+                        </mat-card-actions>
+                    </mat-card>
+
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy2" [CSSCodeToCopy]="CSSCodeToCopy2"
+                    [TsCodeToCopy]="TsCodeToCopy2"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Card with footer</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <mat-card class="example-card" appearance="outlined">
+                        <mat-card-header>
+                            <mat-card-title>Penguin</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>
+                                The coolest bird in town—literally! 🐧
+                                Loves to waddle around in style, even though flight is not an option. Known for their
+                                chill attitude and for looking
+                                like they’re always ready for a formal event. Penguins are the best-dressed in the
+                                animal kingdom—who else can rock
+                                a tuxedo all year round? 🖤🤍
+                                Their hobbies include sliding on ice, looking adorable, and giving you the judgy stare
+                                when you mess up at the office.
+                            </p>
+                        </mat-card-content>
+                        <mat-card-footer class="example-card-footer">
+                            <mat-chip-set aria-label="Penguin traits">
+                                <mat-chip>cool</mat-chip>
+                                <mat-chip>stylish</mat-chip>
+                                <mat-chip>adorable</mat-chip>
+                                <mat-chip>sliding expert</mat-chip> <!-- Funny trait -->
+                            </mat-chip-set>
+                        </mat-card-footer>
+                    </mat-card>
+
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy3" [CSSCodeToCopy]="CSSCodeToCopy3"
+                    [TsCodeToCopy]="TsCodeToCopy3"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <p class="tab-label">Card with media size</p>
+    <div class="div-container">
+        <mat-tab-group animationDuration="0ms" class="mat-tab-section">
+            <mat-tab label="Design">
+                <div class="design-tab">
+                    <!-- First Card: Sloth -->
+                    <mat-card appearance="outlined">
+                        <mat-card-header>
+                            <mat-card-title-group>
+                                <mat-card-title>Sloth</mat-card-title>
+                                <mat-card-subtitle>Slow & Steady</mat-card-subtitle>
+                                <img mat-card-sm-image src="sloth.jpg" alt="Sloth">
+                            </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Known for its **extreme laziness** and desire to take **multiple naps a day**. A Sloth
+                                can take hours to climb a tree... and then sleep in it. 🦥
+                                The definition of "slow and steady wins the race", except the race never started.</p>
+                        </mat-card-content>
+                        <mat-card-footer class="example-card-footer">
+                            <mat-chip-set aria-label="Sloth traits">
+                                <mat-chip>Nap Master</mat-chip>
+                                <mat-chip>Speed: Slow</mat-chip>
+                                <mat-chip>Climbing Pro</mat-chip>
+                            </mat-chip-set>
+                        </mat-card-footer>
+                    </mat-card>
+
+                    <br>
+
+                    <!-- Second Card: Cheetah -->
+                    <mat-card appearance="outlined">
+                        <mat-card-header>
+                            <mat-card-title-group>
+                                <mat-card-title>Cheetah</mat-card-title>
+                                <mat-card-subtitle>Fast & Furious</mat-card-subtitle>
+                                <img mat-card-md-image src="cheetah.jpg" alt="Cheetah">
+                            </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Fastest land animal, but always **stops for snacks**. 🐆
+                                Loves to run at high speed and then immediately take a **5-hour nap**. They’re quick but
+                                also **procrastinators** at heart.</p>
+                        </mat-card-content>
+                        <mat-card-footer class="example-card-footer">
+                            <mat-chip-set aria-label="Cheetah traits">
+                                <mat-chip>Speedster</mat-chip>
+                                <mat-chip>Snack Time</mat-chip>
+                                <mat-chip>Procrastination King</mat-chip>
+                            </mat-chip-set>
+                        </mat-card-footer>
+                    </mat-card>
+
+                    <br>
+
+                    <!-- Third Card: Kangaroo -->
+                    <mat-card appearance="outlined">
+                        <mat-card-header>
+                            <mat-card-title-group>
+                                <mat-card-title>Kangaroo</mat-card-title>
+                                <mat-card-subtitle>Jumping Champion</mat-card-subtitle>
+                                <img mat-card-lg-image src="kangaroo.jpg" alt="Kangaroo">
+                            </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Masters of **leaping** from one place to another, but when they’re not jumping, they’re
+                                simply **chilling** in a weirdly upright pose. 🦘
+                                Known for their **boxing skills**, but mostly use them for dramatic “don’t touch my
+                                snacks” moments.</p>
+                        </mat-card-content>
+                        <mat-card-footer class="example-card-footer">
+                            <mat-chip-set aria-label="Kangaroo traits">
+                                <mat-chip>Leaping Pro</mat-chip>
+                                <mat-chip>Snack Guard</mat-chip>
+                                <mat-chip>Boxing Champion</mat-chip>
+                            </mat-chip-set>
+                        </mat-card-footer>
+                    </mat-card>
+
+                    <br>
+
+                    <!-- Fourth Card: Penguin -->
+                    <mat-card appearance="outlined">
+                        <mat-card-header>
+                            <mat-card-title-group>
+                                <mat-card-title>Penguin</mat-card-title>
+                                <mat-card-subtitle>Cool & Dapper</mat-card-subtitle>
+                                <img mat-card-xl-image src="penguin.jpg" alt="Penguin">
+                            </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Wears a tuxedo every day and still looks cooler than you. 🐧
+                                Loves **sliding** on ice and giving you the **judgy stare** when you mess up. Penguins
+                                are all about **chilling**, in every sense of the word.</p>
+                        </mat-card-content>
+                        <mat-card-footer class="example-card-footer">
+                            <mat-chip-set aria-label="Penguin traits">
+                                <mat-chip>Cooler than You</mat-chip>
+                                <mat-chip>Ice Slider</mat-chip>
+                                <mat-chip>Judgy Stare Expert</mat-chip>
+                            </mat-chip-set>
+                        </mat-card-footer>
+                    </mat-card>
+
+
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Code">
+                <app-code-tab-design [HtmlCodeToCopy]="HtmlCodeToCopy5" [CSSCodeToCopy]="CSSCodeToCopy5"
+                    [TsCodeToCopy]="TsCodeToCopy5"></app-code-tab-design>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
 </mat-card>

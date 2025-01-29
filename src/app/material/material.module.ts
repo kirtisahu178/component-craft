@@ -21,6 +21,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatChipsModule} from '@angular/material/chips';
 
 const materialComponents = [
 
@@ -45,7 +46,8 @@ const materialComponents = [
   MatAutocompleteModule,
   MatBadgeModule,
   MatExpansionModule,
-  MatSidenavContainer
+  MatSidenavContainer,
+  MatChipsModule
 ];
 
 @NgModule({

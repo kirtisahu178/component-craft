@@ -5,25 +5,31 @@
   border-radius: 0 0 10px 10px;
 }
 
-.div-container{
+.div-container {
   border: 2px solid #dedddd;
   border-radius: 10px;
   margin: 5px 0 5px 0;
 }
 
-.mat-tab-section{
+.mat-tab-section {
   padding: 10px;
 }
 
-.tab-content-wrapper {
-  position: relative;
-  padding-top: 40px;
+.design-tab {
+  margin-top: 10px;
 }
 
-.copy-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-  border-radius: 10px;
+
+.example-card {
+  max-width: 400px;
 }
+
+.example-card-footer {
+  padding: 16px;
+}
+
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
